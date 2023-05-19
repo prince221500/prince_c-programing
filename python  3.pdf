@@ -1,0 +1,81 @@
+Name:- Prince kumar
+section:- M (M2)
+course:-B.Tech (cse)
+subject:- Python
+
+
+Q1- Write a program for rock,paper,scissor (computer vs human)
+Ans:-  
+import random
+a = ["rock", "paper", "scissors"]
+b = input("Enter your move (rock/paper/scissors): ")
+while b not in a:
+    b = input("Invalid move. Enter your move (rock/paper/scissors): ")
+c = random.choice(a)
+print("Computer's move:", c)
+if b == c:
+    print("Tie")
+elif b == "rock" and c == "scissors":
+    print("You win")
+elif b == "paper" and c == "rock":
+    print("You win")
+elif b == "scissors" and c == "paper":
+    print("You win")
+else:
+    print("Computer wins")
+
+Q2- Write a program to guess the correct number.
+Ans:- 
+import random
+
+a = random.randint(1, 100)
+while True:
+    guess = int(input("Guess a number between 1 and 100: "))
+    if guess < a:
+        print("Too low")
+    elif guess > a:
+        print("Too high")
+    else:
+        print("Congratulations, you guessed the correct number")
+        break
+
+
+Q3. Write a program to generate password with a fixed length.
+Ans:- 
+import random
+import string
+def generate_password(length):
+    characters = string.ascii_letters + string.digits
+    password = ''.join(random.choice(characters) for i in range(length))
+    return password
+password = generate_password(12)
+print(password)
+
+Q4- Write a program to roll the dice till the 6 number is not appear. (computer vs human)
+Ans:- 
+import random
+def r():
+    return random.randint(1, 6)
+print("Welcome to my dice game")
+print("You'll play against the computer.")
+print("The first player to roll a 6 wins.")
+print("Press enter to roll the dice.")
+a = 0
+b = 0
+while True:
+    input()
+    c = r()
+    d = r()
+    print(f"You rolled a {c}.")
+    print(f"The computer rolled a {d}.")
+    if c == 6:
+        print("You win")
+        break
+    elif d == 6:
+        print("The computer wins")
+        break
+    a += 1
+    b += 1
+print(f"Your score: {a}")
+print(f"Computer score: {b}")
+
